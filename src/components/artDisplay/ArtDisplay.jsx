@@ -1,7 +1,7 @@
 // ArtDisplayCard.js
 import React, { useState } from 'react';
 import Art from "../../assets/artnft.jpeg"
-import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 const ArtDisplayCard = () => {
   const [openSections, setOpenSections] = useState({});
@@ -56,36 +56,36 @@ const ArtDisplayCard = () => {
           <p className="text-gray-500 text-sm mb-2">Follow Us</p>
           <div className="flex justify-center space-x-4">
             <a
-              href="#"
+              href="https://www.instagram.com/yourprofile"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-500 hover:text-gray-800 transition"
             >
-              <i className="fa fa-instagram"></i>
+              <FaInstagram size={24} />
             </a>
             <a
-              href="#"
+              href="https://www.twitter.com/yourprofile"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-500 hover:text-gray-800 transition"
             >
-              <i className="fa fa-twitter"></i>
+              <FaTwitter size={24} />
             </a>
             <a
-              href="#"
+              href="https://www.tiktok.com/@yourprofile"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-500 hover:text-gray-800 transition"
             >
-              <i className="fa fa-tiktok"></i>
+              <FaTiktok size={24} />
             </a>
             <a
-              href="#"
+              href="https://www.facebook.com/yourprofile"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-500 hover:text-gray-800 transition"
             >
-              <i className="fa fa-facebook"></i>
+              <FaFacebook size={24} />
             </a>
           </div>
         </div>
