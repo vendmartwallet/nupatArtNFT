@@ -1,17 +1,20 @@
-// ArtDisplayCard.js
 import React, { useState } from 'react';
 import Art from "../../assets/artnft.jpeg"
 import { FaInstagram, FaTwitter, FaTiktok, FaFacebook } from 'react-icons/fa';
-
 
 const ArtDisplayCard = () => {
   const [openSections, setOpenSections] = useState({});
 
   const toggleSection = (section) => {
-    setOpenSections((prevState) => ({
-      ...prevState,
-      [section]: !prevState[section],
-    }));
+    setOpenSections((prevState) => {
+      // Close other sections and toggle the clicked section
+      const newSections = { ...prevState };
+      for (let key in newSections) {
+        if (key !== section) newSections[key] = false; // Close all other sections
+      }
+      newSections[section] = !newSections[section]; // Toggle the clicked section
+      return newSections;
+    });
   };
 
   return (
@@ -42,13 +45,16 @@ const ArtDisplayCard = () => {
                     ▼
                   </span>
                 </button>
-                {openSections[section] && (
-                  <p className="text-sm text-gray-600 mt-2">
-                    {section === 'Year' && '2024'}
-                    {section === 'Description' && 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'}
-                    {section === 'Story' && 'My fingers brushed lightly over my pallets, a mixture leafy greens, purple, white, burnt sienna and hopeful yellows, maybe am not just painting, I will be telling a story that had been quietly lingering in my heart for long.On this day, I picked up my brushes, determined to paint not just a scene but a journey, I began with warm sienna tones, at the top of the canvas symbolizing the sturdy floors of my childhood homes, at the upper right left side, a husky building which represents the place I was nurtured, the strokes receded downward, transitioning into a vivid greens and yellows sorrounded by earthy browns a scope of me learning about patience and growth.As I paint through, I thought of every moments that has led me to this point, the love of my family,  the pull of dreams, the ego and the price to be paid which is graciously represented by the unique qualities of a peacock. My art was not just about places or objects, it was about a life woven from ordinary yet extraordinary threads of existence. Every dream begins'}
-                  </p>
-                )}
+                <div
+                  className={`transition-all duration-600 overflow-hidden max-h-[${openSections[section] ? '500px' : '0'}]`}>
+                  {openSections[section] && (
+                    <p className="text-sm text-gray-600 mt-2">
+                      {section === 'Year' && '2024'}
+                      {section === 'Description' && 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'}
+                      {section === 'Story' && 'My fingers brushed lightly over my pallets, a mixture leafy greens, purple, white, burnt sienna and hopeful yellows, maybe am not just painting, I will be telling a story that had been quietly lingering in my heart for long.On this day, I picked up my brushes, determined to paint not just a scene but a journey, I began with warm sienna tones, at the top of the canvas symbolizing the sturdy floors of my childhood homes, at the upper right left side, a husky building which represents the place I was nurtured, the strokes receded downward, transitioning into a vivid greens and yellows sorrounded by earthy browns a scope of me learning about patience and growth.As I paint through, I thought of every moments that has led me to this point, the love of my family,  the pull of dreams, the ego and the price to be paid which is graciously represented by the unique qualities of a peacock. My art was not just about places or objects, it was about a life woven from ordinary yet extraordinary threads of existence. Every dream begins'}
+                    </p>
+                  )}
+                </div>
               </div>
             ))}
           </div>
