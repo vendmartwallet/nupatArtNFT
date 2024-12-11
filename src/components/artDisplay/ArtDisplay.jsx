@@ -1,6 +1,7 @@
 // ArtDisplayCard.js
 import React, { useState } from 'react';
 import Art from "../../assets/artnft.jpeg"
+import { FaInstagram, FaTwitter, FaTiktok, FaFacebook } from 'react-icons/fa';
 
 
 const ArtDisplayCard = () => {
