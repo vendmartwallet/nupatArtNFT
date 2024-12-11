@@ -35,7 +35,7 @@ const ArtDisplayCard = () => {
                 >
                   <span className="font-medium">{section}</span>
                   <span
-                    className={`transform transition-transform duration-300 ${
+                    className={`transform transition-transform duration-600 ${
                       openSections[section] ? 'rotate-180' : ''
                     }`}
                   >
