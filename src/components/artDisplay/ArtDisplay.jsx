@@ -1,6 +1,6 @@
 // ArtDisplayCard.js
 import React, { useState } from 'react';
-import Art from "../../assets/artnft.jpg"
+import Art from "../../assets/artnft.jpeg"
 
 const ArtDisplayCard = () => {
   const [openSections, setOpenSections] = useState({});
@@ -21,11 +21,11 @@ const ArtDisplayCard = () => {
           className="w-full h-56 object-cover"
         />
         <div className="p-4">
-          <h2 className="text-xl font-bold text-gray-800">DARK RAY</h2>
-          <p className="text-gray-500 text-sm mb-4">By... UGWU HENRY CHIBUIKE</p>
+          <h2 className="text-xl font-bold text-gray-800">THE COLORS OF HOPE.</h2>
+          <p className="text-gray-500 text-sm mb-4">By... OLUKOWI KAYODE DANIEL</p>
 
           <div className="space-y-2">
-            {['Price', 'Description', 'Story'].map((section) => (
+            {['Year', 'Description', 'Story'].map((section) => (
               <div key={section} className="border-b border-gray-300 pb-2">
                 <button
                   onClick={() => toggleSection(section)}
@@ -42,9 +42,9 @@ const ArtDisplayCard = () => {
                 </button>
                 {openSections[section] && (
                   <p className="text-sm text-gray-600 mt-2">
-                    {section === 'Price' && '2000$'}
+                    {section === 'Year' && '2024'}
                     {section === 'Description' && 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'}
-                    {section === 'Story' && 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel sapien sit amet nulla vulputate facilisis.'}
+                    {section === 'Story' && 'My fingers brushed lightly over my pallets, a mixture leafy greens, purple, white, burnt sienna and hopeful yellows, maybe am not just painting, I will be telling a story that had been quietly lingering in my heart for long.On this day, I picked up my brushes, determined to paint not just a scene but a journey, I began with warm sienna tones, at the top of the canvas symbolizing the sturdy floors of my childhood homes, at the upper right left side, a husky building which represents the place I was nurtured, the strokes receded downward, transitioning into a vivid greens and yellows sorrounded by earthy browns a scope of me learning about patience and growth.As I paint through, I thought of every moments that has led me to this point, the love of my family,  the pull of dreams, the ego and the price to be paid which is graciously represented by the unique qualities of a peacock. My art was not just about places or objects, it was about a life woven from ordinary yet extraordinary threads of existence. Every dream begins'}
                   </p>
                 )}
               </div>
