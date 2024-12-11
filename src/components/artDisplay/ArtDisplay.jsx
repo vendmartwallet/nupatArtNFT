@@ -1,6 +1,7 @@
 // ArtDisplayCard.js
 import React, { useState } from 'react';
 import Art from "../../assets/artnft.jpeg"
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const ArtDisplayCard = () => {
   const [openSections, setOpenSections] = useState({});
